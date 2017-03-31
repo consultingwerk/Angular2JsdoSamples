@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -12,8 +12,11 @@ import { SmartGridModule } from 'smartcomponent-library/smart-grid';
 
 @SmartNgModule({
   smartConfig: {
-    serviceURI: 'http://localhost:8820/web'
-    
+    serviceURI: 'http://localhost:8820/web',
+    credentials: {
+      username: 'demo',
+      password: 'demo'
+    }
   },
   rootComponent: SmartDataSourceBindingComponent,
   imports: [
@@ -24,6 +27,7 @@ import { SmartGridModule } from 'smartcomponent-library/smart-grid';
     FormsModule,
     HttpModule
   ],
-  providers: []
+  providers: [],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
