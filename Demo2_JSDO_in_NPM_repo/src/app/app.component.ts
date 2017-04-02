@@ -12,7 +12,7 @@ import { progress } from 'smartcomponents-jsdo';
 
 /* Example service */
 @Injectable()
-export class CategoriesService extends BehaviorSubject<GridDataResult> {
+export class CustomerJsdoDataService extends BehaviorSubject<GridDataResult> {
     private tableName: string = 'eCustomer';
     private jsdo: progress.data.JSDO;
 
@@ -92,7 +92,7 @@ export class CategoriesService extends BehaviorSubject<GridDataResult> {
     }
 }
 @Component({
-    providers: [CategoriesService],
+    providers: [CustomerJsdoDataService],
     selector: 'my-app',
     template: `
       <kendo-grid
@@ -110,11 +110,11 @@ export class CategoriesService extends BehaviorSubject<GridDataResult> {
 
 export class AppComponent {
     private view: Observable<GridDataResult>;
-    private pageSize: number = 5;
+    private pageSize: number = 10;
     private skip: number = 0;
 
     @ViewChild(GridComponent) private grid: GridComponent;
-    constructor(private service: CategoriesService) {
+    constructor(private service: CustomerJsdoDataService) {
         this.view = service;
         this.service.jsdoLoaded.subscribe(() => {
             this.service.query({ skip: this.skip, take: this.pageSize });
