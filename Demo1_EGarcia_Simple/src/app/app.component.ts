@@ -95,6 +95,7 @@ export class CustomerJsdoDataService extends BehaviorSubject<GridDataResult> {
     providers: [CustomerJsdoDataService],
     selector: 'my-app',
     template: `
+      <h1>Kendo UI Grid with JSDO included as javascript library</h1>    
       <kendo-grid
           [data]="view | async"
           [pageSize]="pageSize"
