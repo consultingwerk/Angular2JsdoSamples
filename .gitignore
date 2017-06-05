@@ -35,3 +35,6 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+Demo3-SmartDataSource-Binding/node_modules/
+Demo4-Data-Binding-with-TextBox/node_modules/

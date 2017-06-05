@@ -1,0 +1,29 @@
+<h1>Smart Data Source Binding Sample</h1>
+
+<smart-data-source 
+    smart-business-entity-name="Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity" 
+    smart-entity-table="eCustomer" 
+    smart-entity-view="eSalesrep" 
+    smart-object-name="customerDatasource">
+</smart-data-source>
+
+<smart-grid 
+    smart-data-source="customerDatasource" 
+    smart-grid-layout="Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity/customerDetails" 
+    smart-object-name="customerGrid">
+</smart-grid>
+<br>
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-xs-3">CustNum</label>
+        <div class="col-xs-9">
+            <input type="text" class="form-control" placeholder="CustNum" [(ngModel)]="customerDatasource.selected.CustNum" *ngIf="customerDatasource && customerDatasource.selected" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">City</label>
+        <div class="col-xs-9">
+            <input type="text" class="form-control" placeholder="City" [(ngModel)]="customerDatasource.selected.City" *ngIf="customerDatasource && customerDatasource.selected" />
+        </div>
+    </div>
+</div>
